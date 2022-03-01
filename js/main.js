@@ -1,29 +1,34 @@
 const searchPhone = () => {
     const textValue = document.getElementById('text-input');
     const textInput = textValue.value;
-
     const url = `https://openapi.programming-hero.com/api/phones?search=${textInput}`
     fetch(url)
         .then(res => res.json())
-        .then(data => displayPhone(data.data));
+        .then(data => displayPhone(data.data.slice(0, 20)));
 
     textValue.value = '';
 }
 
 const displayPhone = (phones) => {
-    // console.log(phones);
     const phoneContainer = document.getElementById('phone-container');
-    phones.forEach(phone => {
-        // console.log(phone.brand);
-        const article = document.createElement('article');
-        article.innerHTML = `<img src="${phone.image}" alt="">
+    phoneContainer.textContent = '';
+    if (phones.length === 0) {
+        alert('Please input at least One character...')
+    }
+    // console.log(phones);
+    else {
+        phones.forEach(phone => {
+            // console.log(phone.brand);
+            const article = document.createElement('article');
+            article.innerHTML = `<img src="${phone.image}" alt="">
                 <div class="text">
                     <h3>${phone.brand}</h3>
                     <p>${phone.phone_name}</p>
                     <button onclick="phoneDetails('${phone.slug}')" >More Details</button>
                 </div>`
-        phoneContainer.appendChild(article);
-    })
+            phoneContainer.appendChild(article);
+        })
+    }
 }
 
 const phoneDetails = (detailsId) => {
@@ -36,6 +41,7 @@ const phoneDetails = (detailsId) => {
 
 const showPhonedetails = (phoneSLug) => {
     const phoneDetailsContainer = document.getElementById('phone-details-container');
+    phoneDetailsContainer.textContent = '';
     const div = document.createElement('div');
     div.innerHTML = `<div class="phone-details-container">
             <div class="image-container">

@@ -181,7 +181,7 @@ a.active,a:hover{
 /* Phone Container Starts here */
 .conatiner{
   justify-content: center;
-  align-items: center;
+    align-items: center;
 }
 .grid{
     margin: 80px;;
@@ -212,6 +212,7 @@ a.active,a:hover{
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+
 }
 .text{
     padding:  0 20px 20px;
@@ -287,15 +288,16 @@ a.active,a:hover{
   margin: 0 auto;
   padding: 30px 20px;
   flex-direction: column;
-  }
 }
 
 @media (max-width: 768px) {
   .phone-details-container{
   display: flex;
+  /* margin-top: 20px; */
   margin: 0 auto;
   padding: 30px 20px;
   flex-direction: column;
+
   }
 }
 @media (min-width: 769px) {
@@ -304,7 +306,6 @@ a.active,a:hover{
   margin: 0 auto;
   padding: 30px 20px;
   flex-direction: row;
-  }
 }
 @media (max-width: 1024px) {
   .phone-details-container{
