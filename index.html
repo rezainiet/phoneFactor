@@ -6,12 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Phone Factor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Find out phone details from PhoneFactor</title>
 </head>
 
 <body>
+    <!-- navigation bar start -->
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">PhoneFactor</label>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+        </ul>
+    </nav>
+    <!-- Navigation Bar ends -->
 
+    <!-- Search Box starts here -->
+    <div class="wrapper">
+        <div class="header">
+            <p>Search Any Phone</p>
+        </div>
 
+        <div class="container">
+            <div class="search_wrap search_wrap_6">
+                <div class="search_box">
+                    <input type="text" id="text-input" class="input" placeholder="search anything...">
+                    <div class="btn">
+                        <p onclick="searchPhone()">Search</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search box ends here -->
+
+    <!-- Phone Container Starts here -->
+    <div class="container">
+        <main class="grid" id="phone-container">
+            <!-- <article>
+                <img src="./images/1.jpg" alt="">
+                <div class="text">
+                    <h3>Card 1</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Button 1</button>
+                </div>
+            </article> -->
+
+            <!-- <article>
+                <img src="./images/2.jpg" alt="">
+                <div class="text">
+                    <h3>Card 2</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Button 2</button>
+                </div>
+            </article>
+
+            <article>
+                <img src="./images/3.jpg" alt="">
+                <div class="text">
+                    <h3>Card 3</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Button 3</button>
+                </div>
+            </article> -->
+        </main>
+    </div>
+    <!-- Phone Container Ends here -->
     <script src="./js/main.js"></script>
 </body>
 

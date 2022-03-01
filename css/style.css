@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+    background: #e3dae7;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar design starts here */
+nav{
+  background: #fe7968;
+  height: 80px;
+  width: 100%;
+}
+label.logo{
+      color: white;
+    font-size: 35px;
+    line-height: 80px;
+    font-weight: bold;
+    margin-left: 2%;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,a:hover{
+  background: #d942f7;
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+/* Navbar Design ends here */
+
+
+/* Search Box Strats here */
+.header{
+	width: 35%;
+	padding: 20px;
+	background: #7690da;
+	margin: 25px auto;
+	border-radius: 50px;
+	text-align: center;
+}
+
+.header p{
+	font-size: 30px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #fff;
+}
+
+.container .input{
+	border: 0;
+	outline: none;
+	color: #8b7d77;
+}
+.container{
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.search_wrap{
+	width: 80%;
+    margin-left: 20%;
+}
+
+.search_wrap .search_box{
+	position: relative;
+	width: 75%;
+	height: 60px;
+}
+
+.search_wrap .search_box .input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px 20px;
+	border-radius: 3px;
+	font-size: 18px;
+}
+
+.search_wrap .search_box .btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 100%;
+	background: #7690da;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.search_wrap .search_box .btn:hover{
+	background: #708bd2;	
+}
+
+.search_wrap .search_box .btn.btn_common .fas{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	font-size: 20px;
+}
+.search_wrap.search_wrap_6 .search_box .input{
+	border-radius: 50px;
+}
+.search_wrap.search_wrap_6 .search_box .btn{
+	width: 125px;
+	height: 45px;
+	top: 8px;
+	right: 5px;
+	border-radius: 3px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search_wrap.search_wrap_6 .search_box .btn{
+	border-radius: 25px;
+}
+.search_wrap.search_wrap_6 .search_box .input{
+	padding-right: 145px;
+}
+/* Search Box ends here */
+
+
+/* Phone Container Starts here */
+.conatiner{
+    justify-content: center;
+    align-items: center;
+}
+.grid{
+    margin: 80px;;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.grid > article{
+    background: #fff;
+    border: none;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.grid > article:hover{
+    transform: translateY(5px);
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.gird > article img{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+.text{
+    padding:  0 20px 20px;
+}
+
+.text h3{
+    text-transform: uppercase;
+}
+.text button{
+    background: #ef6f6c;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background 0.3s ease-in-out;
+}
+
+.text button:hover{
+    background: #038aff;
+}
+/* Phone Container ends here */
+
+/* Media Queary starts here */
+
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    /* padding-left: 50px; */
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+
+@media (max-width: 768px){
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 500px){
+    .grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .grid > article{
+        text-align: center;
+    }
+}
+
+/* The ENDS! */
