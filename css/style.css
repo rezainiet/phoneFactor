@@ -63,7 +63,7 @@ a.active,a:hover{
 /* Search Box Strats here */
 .header{
 	width: 35%;
-	padding: 20px;
+	padding: 15px;
 	background: #7690da;
 	margin: 25px auto;
 	border-radius: 50px;
@@ -176,13 +176,6 @@ a.active,a:hover{
   width: 50%;
   height: 100%;
 }
-ul{
-  /* padding: -20px 0 0 20px; */
-  list-style-type: none;
-}
-ul li{
-  margin-left: -2rem;
-}
 /* Display phone details ends here */
 
 /* Phone Container Starts here */
@@ -288,9 +281,60 @@ ul li{
   }
 }
 
+@media (min-width: 320px) {
+  .phone-details-container{
+  width: 70%;
+  display: flex;
+  margin: 0 auto;
+  padding: 30px 20px;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .phone-details-container{
+  display: flex;
+  /* margin-top: 20px; */
+  margin: 0 auto;
+  padding: 30px 20px;
+  flex-direction: column;
+
+  }
+}
+@media (min-width: 769px) {
+  .phone-details-container{
+  display: flex;
+  margin: 0 auto;
+  padding: 30px 20px;
+  flex-direction: row;
+}
+@media (max-width: 1024px) {
+  .phone-details-container{
+    background: #b7f4d8;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 70%;
+  display: flex;
+  margin: 0 auto;
+  padding: 30px 20px;
+  flex-direction: row;
+
+  }
+  .image-container {
+    width: 45%;
+  }
+
+  .image-container img {
+    width: 230px;
+  }
+}
 @media (max-width: 768px){
     .grid{
         grid-template-columns: repeat(2, 1fr);
+    }
+    .header p{
+      font-size: 20px;
     }
 }
 @media (max-width: 500px){
@@ -301,5 +345,36 @@ ul li{
         text-align: center;
     }
 }
+@media (min-width: 1025px){
+    .phone-details-container{
+  margin: 0 auto;
+  padding: 30px 20px;
+  flex-direction: row;
 
-/* The ENDS! */
+  }
+  .image-container {
+    width: 35%;
+  }
+
+  .image-container img {
+    width: 230px;
+  }
+}
+@media (min-width: 1201px){
+    .phone-details-container{
+  display: flex;
+  margin: 0 auto;
+  padding: 30px 20px;
+  flex-direction: row;
+
+  }
+  .image-container {
+    width: 30%;
+  }
+
+  .image-container img {
+    width: 250px;
+  }
+}
+
+/* Ends */

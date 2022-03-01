@@ -52,12 +52,14 @@ const showPhonedetails = (phoneSLug) => {
                     <p>Chipset: ${phoneSLug.mainFeatures.chipSet}. </p>
                     <p>Memory: ${phoneSLug.mainFeatures.memory}. </p>
                     <h4 style="text-decoration: underline;">Sensors:</h4>
-                    <p>${phoneSLug.mainFeatures.sensor[0]}</p>
-                    <p>Sensor 1</p>
-                    <p>Sensor 1</p>
-                    <p>Sensor 1</p>
+                    <p>i. ${phoneSLug.mainFeatures.sensors[0]}, ${phoneSLug.mainFeatures.sensors[1]}</p>
+                    <p>ii. ${phoneSLug.mainFeatures.sensors[2]}</p>
+                    <p>iii. ${phoneSLug.mainFeatures.sensors[3]}</p>
+                    <p>iv. ${phoneSLug.mainFeatures.sensors[4]}</p>
+                    <p>v. ${phoneSLug.mainFeatures.sensors[5]}</p>
                 </div>
             </div>
         </div>`
     phoneDetailsContainer.appendChild(div);
+    console.log(phoneSLug.mainFeatures.sensors);
 }
