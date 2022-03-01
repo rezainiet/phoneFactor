@@ -9,10 +9,10 @@ const searchPhone = () => {
 }
 
 const displayPhone = (phones) => {
-    console.log(phones);
+    // console.log(phones);
     const phoneContainer = document.getElementById('phone-container');
     phones.forEach(phone => {
-        console.log(phone.brand);
+        // console.log(phone.brand);
         const article = document.createElement('article');
         article.innerHTML = `<img src="${phone.image}" alt="">
                 <div class="text">
@@ -28,5 +28,6 @@ const phoneDetails = (detailsId) => {
     const url = `https://openapi.programming-hero.com/api/phone/${detailsId}`
     fetch(url)
         .then(res => res.json())
-        .then(data => console.log(data.slug));
+        .then(data => console.log(data.data.brand));
+    // console.log(detailsId);
 }

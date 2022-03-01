@@ -97,6 +97,7 @@ a.active,a:hover{
 	position: relative;
 	width: 75%;
 	height: 60px;
+  margin-bottom: 35px;
 }
 
 .search_wrap .search_box .input{
@@ -156,6 +157,33 @@ a.active,a:hover{
 }
 /* Search Box ends here */
 
+/* Display phone details starts here */
+
+.phone-details-container{
+  background: #b7f4d8;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 70%;
+  display: flex;
+  /* margin-top: 20px; */
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+.details-container{
+  margin-left: 2%;
+  width: 50%;
+  height: 100%;
+}
+ul{
+  /* padding: -20px 0 0 20px; */
+  list-style-type: none;
+}
+ul li{
+  margin-left: -2rem;
+}
+/* Display phone details ends here */
 
 /* Phone Container Starts here */
 .conatiner{
