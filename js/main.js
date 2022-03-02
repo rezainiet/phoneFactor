@@ -56,7 +56,7 @@ const showPhonedetails = (phoneSLug) => {
     const div = document.createElement('div');
     div.innerHTML = `<div class="phone-details-container">
             <div class="image-container">
-                <img src="./images/1.jpg" alt="">
+                <img src="${phoneSLug.image}" alt="">
             </div>
             <div class="details-container">
                 <h2>Name: ${phoneSLug.name}.</h2>
