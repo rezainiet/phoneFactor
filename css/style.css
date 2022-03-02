@@ -11,7 +11,30 @@ body{
     background: #e3dae7;
     font-family: 'Poppins', sans-serif;
 }
-
+.loading-gif-container{
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+.loading-gif{
+  display: none;
+  width: 150px;
+}
+.loading-gif img{
+  width: 100%;
+}
+div#hints {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    background: #FDE999;
+    color: #ef6f6c;
+    border-radius: 5px;
+    /* padding: 2px 5px; */
+    width: 30%;
+    margin: 0 auto;
+}
 /* Navbar design starts here */
 nav{
   background: #fe7968;
@@ -176,6 +199,12 @@ a.active,a:hover{
   width: 50%;
   height: 100%;
 }
+.bold-text{
+  font-weight: 600;
+}
+.font-weight{
+  font-weight: 500;
+}
 /* Display phone details ends here */
 
 /* Phone Container Starts here */
@@ -201,6 +230,7 @@ a.active,a:hover{
     text-align: center;
     width: 300px;
     transition: transform 0.3s;
+    padding: 20px 0;
 }
 
 .grid > article:hover{
@@ -234,7 +264,9 @@ a.active,a:hover{
 }
 
 .text button:hover{
-    background: #038aff;
+    background: #b7f4d8;
+    color: #ef6f6c;
+    cursor: pointer;
 }
 /* Phone Container ends here */
 

@@ -1,3 +1,5 @@
+let loadingGif = document.getElementById('loading-gif');
+let displayError = document.getElementById('hints');
 const searchPhone = () => {
     const textValue = document.getElementById('text-input');
     const textInput = textValue.value;
@@ -12,8 +14,13 @@ const searchPhone = () => {
 const displayPhone = (phones) => {
     const phoneContainer = document.getElementById('phone-container');
     phoneContainer.textContent = '';
+    displayError.textContent = '';
+    loadingGif.style.display = 'block';
     if (phones.length === 0) {
-        alert('Please input at least One character...')
+        const div = document.createElement('div');
+        loadingGif.style.display = 'none';
+        div.innerHTML = `<p>No phone found! Try again...</p>`
+        displayError.appendChild(div);
     }
     // console.log(phones);
     else {
@@ -29,6 +36,7 @@ const displayPhone = (phones) => {
             phoneContainer.appendChild(article);
         })
     }
+    loadingGif.style.display = 'none';
 }
 
 const phoneDetails = (detailsId) => {
@@ -42,6 +50,7 @@ const phoneDetails = (detailsId) => {
 const showPhonedetails = (phoneSLug) => {
     const phoneDetailsContainer = document.getElementById('phone-details-container');
     phoneDetailsContainer.textContent = '';
+    loadingGif.style.display = 'block';
     const div = document.createElement('div');
     div.innerHTML = `<div class="phone-details-container">
             <div class="image-container">
@@ -49,23 +58,39 @@ const showPhonedetails = (phoneSLug) => {
             </div>
             <div class="details-container">
                 <h2>Name: ${phoneSLug.name}.</h2>
-                <h2>Brand: ${phoneSLug.brand}.</h2>
-                <h3>Release Date: ${phoneSLug.releaseDate}.</h3>
+                <h2>Brand: <span class="font-weight">${phoneSLug.brand}.</span></h2>
+                <h3>Release Date: <span class="font-weight">${phoneSLug.releaseDate ? phoneSLug.releaseDate : "No release date found!"}.</span></h3>
+                <h4>ID: <span class="font-weight">${phoneSLug.slug}.</span></h4>
+                    <br>
                 <h3 style="text-decoration: underline;">Main Features:</h3>
+                    <br>
                 <div class="main-features-wrapper">
-                    <p>Storage: ${phoneSLug.mainFeatures.storage}.</p>
-                    <p>Display Size: ${phoneSLug.mainFeatures.displaySize}. </p>
-                    <p>Chipset: ${phoneSLug.mainFeatures.chipSet}. </p>
-                    <p>Memory: ${phoneSLug.mainFeatures.memory}. </p>
+                    <p><span class="bold-text">Storage:</span> ${phoneSLug.mainFeatures.storage}.</p>
+                    <p><span class="bold-text">Display Size:</span> ${phoneSLug.mainFeatures.displaySize}. </p>
+                    <p><span class="bold-text">Chipset:</span> ${phoneSLug.mainFeatures.chipSet}. </p>
+                    <p><span class="bold-text">Memory:</span> ${phoneSLug.mainFeatures.memory}. </p>
+                    <br>
                     <h4 style="text-decoration: underline;">Sensors:</h4>
+                    <br>
                     <p>i. ${phoneSLug.mainFeatures.sensors[0]}, ${phoneSLug.mainFeatures.sensors[1]}</p>
                     <p>ii. ${phoneSLug.mainFeatures.sensors[2]}</p>
                     <p>iii. ${phoneSLug.mainFeatures.sensors[3]}</p>
                     <p>iv. ${phoneSLug.mainFeatures.sensors[4]}</p>
                     <p>v. ${phoneSLug.mainFeatures.sensors[5]}</p>
+                    <br>
+                    <h4 style="text-decoration: underline;">Other Features:</h4>
+                    <br>
+                    <p><span class="bold-text">WLAN:</span> ${phoneSLug.others ? phoneSLug.others.WLAN : "WLAN Not Found"}</p>
+                    <p><span class="bold-text">Bluetooth:</span> ${phoneSLug.others ? phoneSLug.others.Bluetooth : "Bluetooth Not Found"}.</p>
+                    <p><span class="bold-text">GPS:</span> ${phoneSLug.others ? phoneSLug.others.GPS : "GPS Not Found"}.</p>
+                    <p><span class="bold-text">NFC:</span> ${phoneSLug.others ? phoneSLug.others.NFC : "NFC Not Found"}.</p>
+                    <p><span class="bold-text">Radio:</span> ${phoneSLug.others ? phoneSLug.others.Radio : "Radio Not Found"}.</p>
+                    <p><span class="bold-text">USB:</span> ${phoneSLug.others ? phoneSLug.others.USB : "USB Not Found"}</p>
+                    
                 </div>
             </div>
         </div>`
     phoneDetailsContainer.appendChild(div);
-    console.log(phoneSLug.mainFeatures.sensors);
+    loadingGif.style.display = 'none';
+    console.log(phoneSLug.others);
 }
