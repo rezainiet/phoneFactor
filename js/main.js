@@ -1,5 +1,6 @@
 let loadingGif = document.getElementById('loading-gif');
 let displayError = document.getElementById('hints');
+let phoneDetailsContainer = document.getElementById('phone-details-container');
 const searchPhone = () => {
     const textValue = document.getElementById('text-input');
     const textInput = textValue.value;
@@ -15,6 +16,8 @@ const displayPhone = (phones) => {
     const phoneContainer = document.getElementById('phone-container');
     phoneContainer.textContent = '';
     displayError.textContent = '';
+    phoneDetailsContainer.textContent = '';
+
     loadingGif.style.display = 'block';
     if (phones.length === 0) {
         const div = document.createElement('div');
@@ -48,7 +51,6 @@ const phoneDetails = (detailsId) => {
 }
 
 const showPhonedetails = (phoneSLug) => {
-    const phoneDetailsContainer = document.getElementById('phone-details-container');
     phoneDetailsContainer.textContent = '';
     loadingGif.style.display = 'block';
     const div = document.createElement('div');
