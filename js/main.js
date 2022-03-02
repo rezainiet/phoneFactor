@@ -34,7 +34,7 @@ const displayPhone = (phones) => {
                 <div class="text">
                     <h3>${phone.brand}</h3>
                     <p>${phone.phone_name}</p>
-                    <button onclick="phoneDetails('${phone.slug}')" >More Details</button>
+                    <button onclick="phoneDetails('${phone.slug}'); scrollToTop()" >More Details</button>
                 </div>`
             phoneContainer.appendChild(article);
         })
@@ -95,4 +95,8 @@ const showPhonedetails = (phoneSLug) => {
     phoneDetailsContainer.appendChild(div);
     loadingGif.style.display = 'none';
     console.log(phoneSLug.others);
+}
+
+const scrollToTop = () => {
+    window.scrollTo(0, 190);
 }

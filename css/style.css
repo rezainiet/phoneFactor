@@ -7,6 +7,9 @@
   list-style: none;
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 body{
     background: #e3dae7;
     font-family: 'Poppins', sans-serif;
@@ -312,7 +315,11 @@ a.active,a:hover{
     left: 0;
   }
 }
-
+@media (max-width: 319px) {
+  .grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 @media (min-width: 320px) {
   .phone-details-container{
   width: 70%;
@@ -320,8 +327,26 @@ a.active,a:hover{
   margin: 0 auto;
   padding: 30px 20px;
   flex-direction: column;
+  }
+  .grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .header{
+    font-size: 20px;
+  }
 }
 
+@media (min-width: 560px) {
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
+@media (min-width: 960px) {
+  .gird{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media (max-width: 768px) {
   .phone-details-container{
   display: flex;
@@ -361,18 +386,15 @@ a.active,a:hover{
     width: 230px;
   }
 }
-@media (max-width: 768px){
+@media (min-width: 768px){
     .grid{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
     .header p{
       font-size: 20px;
     }
 }
 @media (max-width: 500px){
-    .grid{
-        grid-template-columns: repeat(1, 1fr);
-    }
     .grid > article{
         text-align: center;
     }
